@@ -1,10 +1,11 @@
 #pragma once
+#include <iostream>
 class dateType
 {
 public:
-	dateType(int = 1, int = 1, int = 1900);
+	dateType(int = 1, int = 1, int = 1900) ;
 	
-	void setDate(int, int, int) {};
+	void setDate(int, int, int);
 	
 	int getDay() const { return dDay; }
 	int getMonth() const { return dMonth; }
@@ -12,7 +13,7 @@ public:
 
 	bool isLeapYear(int);
 	
-	void print() const {};
+	void print() const;
 
 private: 
 	int dDay;
