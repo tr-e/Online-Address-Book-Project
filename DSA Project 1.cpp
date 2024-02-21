@@ -1,19 +1,28 @@
 #include <iostream>
-#include "dateType.h"
-#include "personType.h"
+#include "extPersonType.h"
+
 using namespace std;
-// Program to verify that the modified personType class is working correctly
+
 int main()
 {
-	personType defPerson;
-	defPerson.print();
-	cout << endl;
+    cout << "Testing default constructor ... " << endl;
+    extPersonType defPerson;
+    defPerson.print();
+    cout << endl;
 
-	personType person("John", "Doe");
-	person.print();
-	cout << endl;
-	person.setFirstName("Jane");
-	person.setLastName("Smith");
-	person.print();
-	cout << endl;
+    cout << "Testing constructor with parameters ... " << endl;
+    extPersonType person("George", "Smith", 4, 30, 1994, "145 South Street, Apt. 5", "Hampton", "VA", 23554, "757-444-5555", "Friend");
+    person.print();
+    cout << endl;
+
+    cout << "Testing invalid relationship (Spouse) ... " << endl;
+    person.setRelationship("Spouse");
+    person.print();
+    cout << endl;
+
+    cout << "Testing valid relationship (Business) ... " << endl;
+    person.setRelationship("Business");
+    person.print();
+    cout << endl;
+
 }

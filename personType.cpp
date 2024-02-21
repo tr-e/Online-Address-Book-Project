@@ -7,7 +7,6 @@ personType::personType(string first, string last) : firstName(first), lastName(l
 
 void personType::setFirstName(string first) { firstName = first; }
 void personType::setLastName(string last) { lastName = last; }
-void personType::print() const {
-	std::cout << firstName << " " << lastName;
-}
 
+
+void personType::print() const { std::cout << firstName << " " << lastName; }

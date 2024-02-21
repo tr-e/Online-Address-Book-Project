@@ -25,7 +25,7 @@ public:
 	//End of Setters and Getters
 	
 	//Precondition: The address, city, state, and zipCode have been initialized
-	void print() const;
+	virtual void print() const;
 	//Postcondition: The address, city, state, and zipCode have been printed
 
 private:
