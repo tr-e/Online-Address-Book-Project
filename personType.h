@@ -13,11 +13,11 @@ public:
 	virtual void setLastName(string lastName);
 	virtual string getFirstName() const { return firstName; }
 	virtual string getLastName() const { return lastName; }
+	void print() const;
 
-	//print 
-virtual void print() const;
-private: 
-	string firstName; 
+private:
+	string firstName;
 	string lastName;
 };
+
 

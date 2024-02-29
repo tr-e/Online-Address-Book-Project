@@ -3,7 +3,7 @@
 
 class addressType
 {
-public: 
+public:
 	//Default Constructor
 	addressType();
 
@@ -23,7 +23,7 @@ public:
 	int getZipcode() const { return zip; }
 	//Postcondition: The address, city, state, and zipCode have been returned
 	//End of Setters and Getters
-	
+
 	//Precondition: The address, city, state, and zipCode have been initialized
 	virtual void print() const;
 	//Postcondition: The address, city, state, and zipCode have been printed
@@ -34,4 +34,3 @@ private:
 	std::string state;
 	int zip;
 };
-
