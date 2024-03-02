@@ -7,26 +7,13 @@ using std::cin;
 using std::string;
 
 
-/*
-  Prints a welcome message
-
-  Precondition: None
-
-  Postcondition: A welcome message is printed out
-*/
 void Menu::welcome() {
     std::cout << "welcome to the address book program" << std::endl;
     std::cout << "please select an option from the menu below" << std::endl;
     std::cout << std::endl;
 }
 
-/*
-  Displays the menu to the user and prompts them to select an option
 
-  Precondition: None
-
-  Postcondition: The user is prompted to select an option from the menu
-*/
 void Menu::displayMenu() {
     //possible future functionality
     //std::cout << "1. Add a new entry" << std::endl;
@@ -40,13 +27,7 @@ void Menu::displayMenu() {
 
 };
 
-/*
-  Processes user selections
 
-  Precondition: The user must select a valid option from the menu
-
-  Postcondition: The user's selection is processed and the appropriate function is ran
-*/
 void Menu::processSelection(addressBookType& addressBook) {
     bool exit = false; //flag 
 
@@ -91,13 +72,6 @@ void Menu::processSelection(addressBookType& addressBook) {
 };
 
 
-/*
-  Runs the program
-
-  Precondition: None
-
-  PostCondition: The program is run
-*/
 void Menu::run() {
     addressBookType addressBook;
     addressBook.initEntry("AddressBookData.txt");

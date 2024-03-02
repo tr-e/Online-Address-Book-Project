@@ -22,15 +22,6 @@ using std::vector;
 addressBookType::addressBookType() : maxLength(500), length(0) {}
 
 
-/*
-Creates entries in the addressBookType class
-
-@param: string first, string last, int month, int day, int year, string address, string city, string state, int zip, string phone, string relation
-
-Precondition: A valid filename is passed to the function
-
-Postcondition: The addressBookType class is populated with entries
-*/
 void addressBookType::initEntry(string fileName) {
     //variables used to create a new entry
     string name, first, last, street, city, state, phoneNumber, relationship;
@@ -75,13 +66,6 @@ void addressBookType::initEntry(string fileName) {
 }
 
 
-/*
-Adds new entries into an address book
-
-Precondition: The length of the address book must be less than maxLength and a valid extPersonType object must be passed as a parameter
-
-Postcondition: The new entry is added to the address book and the length is incremented
-*/
 void addressBookType::addEntry(extPersonType person) {
     if (length < maxLength) {
         addressList[length] = person;
@@ -93,15 +77,6 @@ void addressBookType::addEntry(extPersonType person) {
 }
 
 
-/*
-  Searches for a person by last name
-
-  Preconditions: The address book must be initialized and a valid last name must be passed as a parameter
-
-  Postconditions: If the person is found, the person's information is printed, otherwise an error message is printed
-
-  Utilizes linear search --> short list --> O(n)
-*/
 void addressBookType::findPerson(string lastName) {
     vector<extPersonType> foundPersons;
 
@@ -123,15 +98,6 @@ void addressBookType::findPerson(string lastName) {
 }
 
 
-/*
-  Searches for a person by birth month
-
-  Preconditions: The address book must be initialized and a valid integer must be passed as a parameter
-
-  Postconditions: The person(s) with the same birth month are printed out
-
-  Utilizes linear search --> small list --> O(n); could optimize with binary search
-*/
 void addressBookType::findBirthdays(int month) {
     vector<extPersonType> foundBirthdays;
 
@@ -152,15 +118,6 @@ void addressBookType::findBirthdays(int month) {
 }
 
 
-/*
-Searches for a person by relationship
-
-Preconditions: The address book must be initialized and a valid relationship must be passed as a parameter
-
-Postconditions: The person(s) with the same relationship are printed out
-
-Utilizes linear search algo --> small list --> O(n)
-*/
 void addressBookType::findRelations(string relationship) {
     vector<extPersonType> foundRelations;
 
@@ -183,15 +140,6 @@ void addressBookType::findRelations(string relationship) {
 }
 
 
-/*
-Sorts the address book by last name
-
-Preconditions: The address book must be initialized
-
-Postconditions: The address book is sorted by last name
-
-Utilizes insertion sort algo --> 0(n^2)
-*/
 void addressBookType::sortEntries() {
     bool placeFound;
     int index;
@@ -216,13 +164,6 @@ void addressBookType::sortEntries() {
 }
 
 
-/*
-Prints the address book
-
-Preconditions: The address book must be initialized
-
-Postconditions: The address book is printed out
-*/
 void addressBookType::print() const {
     for (int i = 0; i < length; i++) {
         addressList[i].print();
