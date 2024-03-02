@@ -57,7 +57,13 @@ void Menu::processSelection(addressBookType& addressBook) {
         int inputInt;
         int choice;
         cin >> choice;
-        cout << std::endl;
+
+        if (cin.fail()) {
+            cin.clear();
+        }
+
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
         switch (choice) {
         case 1:
             cout << "Enter the last name: ";
@@ -94,7 +100,7 @@ void Menu::processSelection(addressBookType& addressBook) {
 */
 void Menu::run() {
     addressBookType addressBook;
-    addressBook.initEntry("Online Address Book Data.txt");
+    addressBook.initEntry("AddressBookData.txt");
     //utilize case statements
     processSelection(addressBook);  //process selection
 };
